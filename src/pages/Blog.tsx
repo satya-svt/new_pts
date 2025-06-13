@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { BookOpen, TrendingUp, Lightbulb, Code, Cpu, Shield } from 'lucide-react';
 
 const Blog = () => {
   const featuredArticles = [
     {
+      id: 'future-iot-smart-cities',
       title: 'The Future of IoT in Smart Cities',
       excerpt: 'Explore how IoT technology is revolutionizing urban infrastructure, enhancing sustainability, and improving public services.',
       image: 'https://images.pexels.com/photos/374815/pexels-photo-374815.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -14,6 +16,7 @@ const Blog = () => {
       color: 'from-blue-400 to-cyan-500'
     },
     {
+      id: 'white-label-iot-solutions',
       title: 'Building a White-Label IoT Solution: What You Need to Know',
       excerpt: 'Learn the key steps to creating a successful white-label IoT product that you can brand and sell.',
       image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -23,6 +26,7 @@ const Blog = () => {
       color: 'from-green-400 to-emerald-500'
     },
     {
+      id: 'embedded-systems-trends',
       title: 'Top 5 Trends in Embedded Systems',
       excerpt: 'Stay updated on the latest trends in embedded systems and how they impact IoT product development.',
       image: 'https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -139,13 +143,15 @@ const Blog = () => {
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">{article.title}</h3>
                   <p className="text-gray-300 mb-4 line-clamp-3">{article.excerpt}</p>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`bg-gradient-to-r ${article.color} text-white px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg transition-all duration-300`}
-                  >
-                    Read More
-                  </motion.button>
+                  <Link to={`/blog/${article.id}`}>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`bg-gradient-to-r ${article.color} text-white px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg transition-all duration-300`}
+                    >
+                      Read More
+                    </motion.button>
+                  </Link>
                 </div>
               </motion.div>
             ))}

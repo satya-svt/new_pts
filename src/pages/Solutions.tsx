@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Smartphone, Building, Home } from 'lucide-react';
 
 const Solutions = () => {
   const solutions = [
     {
+      id: 'mobile-web-development',
       icon: Smartphone,
       title: 'Mobile and Web Development',
       description: 'Our mobile and web development services focus on creating user-friendly applications that leverage IoT capabilities.',
@@ -22,6 +24,7 @@ const Solutions = () => {
       color: 'from-blue-400 to-cyan-500'
     },
     {
+      id: 'smart-cities',
       icon: Building,
       title: 'Smart Cities',
       description: 'We are committed to making cities smarter through IoT technology, integrating various applications to enhance urban living.',
@@ -39,6 +42,7 @@ const Solutions = () => {
       color: 'from-green-400 to-emerald-500'
     },
     {
+      id: 'smart-home',
       icon: Home,
       title: 'Smart Home',
       description: 'Transform your living space into a smart home with our innovative solutions that allow you to control and monitor your home environment.',
@@ -154,13 +158,15 @@ const Solutions = () => {
                     </div>
                   </div>
 
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`mt-8 bg-gradient-to-r ${solution.color} text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300`}
-                  >
-                    Learn More
-                  </motion.button>
+                  <Link to={`/solutions/${solution.id}`}>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`mt-8 bg-gradient-to-r ${solution.color} text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300`}
+                    >
+                      Learn More
+                    </motion.button>
+                  </Link>
                 </div>
               </motion.div>
             </motion.div>
@@ -179,13 +185,15 @@ const Solutions = () => {
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             If you're interested in learning more about how our solutions can benefit your organization or home, please contact us for a consultation. Our team is ready to help you harness the power of IoT technology.
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
-          >
-            Schedule Consultation
-          </motion.button>
+          <Link to="/contact">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
+            >
+              Schedule Consultation
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </div>

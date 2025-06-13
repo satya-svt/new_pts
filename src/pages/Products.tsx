@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Cpu, MapPin, Phone, Droplets, Shield, Ticket } from 'lucide-react';
 
 const Products = () => {
   const products = [
     {
+      id: 'iot-development-boards',
       icon: Cpu,
       title: 'IoT Development Boards',
       description: 'Designed for developers and hobbyists to create and prototype IoT applications quickly and efficiently.',
@@ -22,6 +24,7 @@ const Products = () => {
       color: 'from-blue-400 to-cyan-500'
     },
     {
+      id: 'gps-tracker',
       icon: MapPin,
       title: 'GPS Tracker',
       description: 'A reliable device that enables real-time tracking of vehicles, assets, or individuals.',
@@ -39,6 +42,7 @@ const Products = () => {
       color: 'from-green-400 to-emerald-500'
     },
     {
+      id: 'payphone',
       icon: Phone,
       title: 'PayPhone',
       description: 'An innovative solution designed for schools and colleges, allowing students to make phone calls securely.',
@@ -55,6 +59,7 @@ const Products = () => {
       color: 'from-purple-400 to-pink-500'
     },
     {
+      id: 'aquasafe',
       icon: Droplets,
       title: 'AquaSafe',
       description: 'A state-of-the-art water quality monitoring system designed to ensure safe and clean water.',
@@ -72,6 +77,7 @@ const Products = () => {
       color: 'from-cyan-400 to-blue-500'
     },
     {
+      id: 'rfid-tripod-turnstile',
       icon: Shield,
       title: 'RFID Tripod Turnstile',
       description: 'A secure and efficient access control solution for various applications.',
@@ -89,6 +95,7 @@ const Products = () => {
       color: 'from-orange-400 to-red-500'
     },
     {
+      id: 'token-kiosk',
       icon: Ticket,
       title: 'Token Kiosk',
       description: 'An innovative solution for managing queues and enhancing customer service.',
@@ -176,13 +183,15 @@ const Products = () => {
                   </div>
                 </div>
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`mt-6 bg-gradient-to-r ${product.color} text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300`}
-                >
-                  Learn More
-                </motion.button>
+                <Link to={`/products/${product.id}`}>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`mt-6 bg-gradient-to-r ${product.color} text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300`}
+                  >
+                    Learn More
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -200,13 +209,15 @@ const Products = () => {
           <p className="text-lg text-gray-300 mb-8">
             If you're interested in any of our products or need more information, please contact us or visit our Shop page.
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
-          >
-            Contact Us Today
-          </motion.button>
+          <Link to="/contact">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
+            >
+              Contact Us Today
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </div>

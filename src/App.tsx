@@ -5,11 +5,14 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Products from './pages/Products';
+import ProductDetail from './pages/ProductDetail';
 import Solutions from './pages/Solutions';
+import SolutionDetail from './pages/SolutionDetail';
 import Apps from './pages/Apps';
 import Shop from './pages/Shop';
 import About from './pages/About';
 import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
 
 function App() {
@@ -25,11 +28,14 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/solutions" element={<Solutions />} />
+            <Route path="/solutions/:id" element={<SolutionDetail />} />
             <Route path="/apps" element={<Apps />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </motion.main>
