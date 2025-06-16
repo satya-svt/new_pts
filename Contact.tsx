@@ -1,63 +1,76 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Send, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+} from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
   const contactInfo = [
     {
       icon: Phone,
-      title: 'Phone',
-      value: '+91 93469 34969',
-      link: 'tel:+919346934969',
-      color: 'from-green-400 to-emerald-500'
+      title: "Phone",
+      value: "+91 93469 34969",
+      link: "tel:+919346934969",
+      color: "from-green-400 to-emerald-500",
     },
     {
       icon: Mail,
-      title: 'Email',
-      value: 'info@purpletechnosolutions.in',
-      link: 'mailto:info@purpletechnosolutions.in',
-      color: 'from-blue-400 to-cyan-500'
+      title: "Email",
+      value: "info@purpletechnosolutions.in",
+      link: "mailto:info@purpletechnosolutions.in",
+      color: "from-blue-400 to-cyan-500",
     },
     {
       icon: MapPin,
-      title: 'Address',
-      value: 'Mullapudi Venkateswara Rao St, Labbipet, Vijayawada, Andhra Pradesh 520010, India',
-      link: 'https://maps.google.com/?q=Mullapudi+Venkateswara+Rao+St,+Labbipet,+Vijayawada,+Andhra+Pradesh+520010,+India',
-      color: 'from-purple-400 to-pink-500'
+      title: "Address",
+      value:
+        "Mullapudi Venkateswara Rao St, Labbipet, Vijayawada, Andhra Pradesh 520010, India",
+      link: "https://maps.google.com/?q=Mullapudi+Venkateswara+Rao+St,+Labbipet,+Vijayawada,+Andhra+Pradesh+520010,+India",
+      color: "from-purple-400 to-pink-500",
     },
     {
       icon: Clock,
-      title: 'Business Hours',
-      value: 'Mon-Fri: 9AM-6PM, Sat: 10AM-4PM, Sun: Closed',
+      title: "Business Hours",
+      value: "Mon-Fri: 9AM-6PM, Sat: 10AM-4PM, Sun: Closed",
       link: null,
-      color: 'from-orange-400 to-red-500'
-    }
+      color: "from-orange-400 to-red-500",
+    },
   ];
 
   const socialLinks = [
-    { icon: Facebook, link: '#', color: 'from-blue-600 to-blue-500' },
-    { icon: Twitter, link: '#', color: 'from-cyan-400 to-blue-400' },
-    { icon: Linkedin, link: '#', color: 'from-blue-700 to-blue-600' },
-    { icon: Instagram, link: '#', color: 'from-pink-500 to-purple-500' }
+    { icon: Facebook, link: "#", color: "from-blue-600 to-blue-500" },
+    { icon: Twitter, link: "#", color: "from-cyan-400 to-blue-400" },
+    { icon: Linkedin, link: "#", color: "from-blue-700 to-blue-600" },
+    { icon: Instagram, link: "#", color: "from-pink-500 to-purple-500" },
   ];
 
   return (
@@ -70,10 +83,15 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Contact <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Us</span>
+            Contact{" "}
+            <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Us
+            </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We'd love to hear from you! Whether you have questions about our products, services, or partnership opportunities, our team is here to assist you.
+            We'd love to hear from you! Whether you have questions about our
+            products, services, or partnership opportunities, our team is here
+            to assist you.
           </p>
         </motion.div>
 
@@ -85,7 +103,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl font-bold text-white mb-8">Get in Touch</h2>
-            
+
             <div className="space-y-6 mb-12">
               {contactInfo.map((info, index) => (
                 <motion.div
@@ -97,16 +115,26 @@ const Contact = () => {
                   className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:border-cyan-400/50 transition-all duration-300"
                 >
                   <div className="flex items-start space-x-4">
-                    <div className={`w-12 h-12 bg-gradient-to-r ${info.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                    <div
+                      className={`w-12 h-12 bg-gradient-to-r ${info.color} rounded-xl flex items-center justify-center flex-shrink-0`}
+                    >
                       <info.icon className="h-6 w-6 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-white mb-2">{info.title}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">
+                        {info.title}
+                      </h3>
                       {info.link ? (
                         <a
                           href={info.link}
-                          target={info.title === 'Address' ? '_blank' : undefined}
-                          rel={info.title === 'Address' ? 'noopener noreferrer' : undefined}
+                          target={
+                            info.title === "Address" ? "_blank" : undefined
+                          }
+                          rel={
+                            info.title === "Address"
+                              ? "noopener noreferrer"
+                              : undefined
+                          }
                           className="text-gray-300 hover:text-cyan-400 transition-colors duration-300"
                         >
                           {info.value}
@@ -128,7 +156,8 @@ const Contact = () => {
             >
               <h3 className="text-2xl font-bold text-white mb-6">Follow Us</h3>
               <p className="text-gray-300 mb-6">
-                Stay connected with us on social media for the latest updates, news, and insights into the IoT industry.
+                Stay connected with us on social media for the latest updates,
+                news, and insights into the IoT industry.
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
@@ -153,8 +182,10 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/20"
           >
-            <h2 className="text-3xl font-bold text-white mb-8">Send Us a Message</h2>
-            
+            <h2 className="text-3xl font-bold text-white mb-8">
+              Send Us a Message
+            </h2>
+
             <motion.form
               onSubmit={handleSubmit}
               initial={{ opacity: 0 }}
@@ -167,7 +198,10 @@ const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Name *
                 </label>
                 <motion.input
@@ -188,7 +222,10 @@ const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Email *
                 </label>
                 <motion.input
@@ -209,7 +246,10 @@ const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Message *
                 </label>
                 <motion.textarea
@@ -257,14 +297,22 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="mt-20 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30 text-center"
         >
-          <h2 className="text-3xl font-bold text-white mb-4">Visit Our Office</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Visit Our Office
+          </h2>
           <p className="text-lg text-gray-300 mb-6">
-            Feel free to drop by our office during business hours. We look forward to meeting you!
+            Feel free to drop by our office during business hours. We look
+            forward to meeting you!
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => window.open('https://maps.google.com/?q=Mullapudi+Venkateswara+Rao+St,+Labbipet,+Vijayawada,+Andhra+Pradesh+520010,+India', '_blank')}
+            onClick={() =>
+              window.open(
+                "https://maps.google.com/?q=Mullapudi+Venkateswara+Rao+St,+Labbipet,+Vijayawada,+Andhra+Pradesh+520010,+India",
+                "_blank"
+              )
+            }
             className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 inline-flex items-center space-x-2"
           >
             <MapPin className="h-5 w-5" />
@@ -277,3 +325,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+/*this is a contact page */
