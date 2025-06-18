@@ -1,224 +1,292 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Cpu, MapPin, Phone, Droplets, Shield, Ticket } from 'lucide-react';
+import { Link, useSearchParams } from 'react-router-dom';
+import {
+  Cpu, MapPin, Phone, Droplets, Shield, Ticket,
+  LockKeyhole, Wifi, Globe, GraduationCap, Building
+} from 'lucide-react';
+
+const productCategories = [
+  { id: 'all', label: 'All Products', icon: Globe },
+  { id: 'car-gps', label: 'Car GPS Tracker', icon: MapPin },
+  { id: 'bike-gps', label: 'Bike GPS Tracker', icon: MapPin },
+  { id: 'bus-tracking', label: 'Bus Tracking System', icon: MapPin },
+  { id: 'truck-tracking', label: 'Truck Tracking System', icon: MapPin },
+  { id: 'video-telematics', label: 'Video Telematics', icon: Shield },
+  { id: 'asset-tracking', label: 'Asset Tracking', icon: Ticket },
+  { id: 'fuel-monitoring', label: 'Fuel Monitoring', icon: Droplets },
+  { id: 'e-lock', label: 'E-Lock with GPS Tracker', icon: LockKeyhole },
+  { id: 'wifi-tracking', label: 'Wifi Based Tracking', icon: Wifi },
+  { id: 'ev-tracking', label: 'Electric Vehicle', icon: Cpu },
+];
+
+const products = [
+  {
+    id: 'car-gps-1',
+    title: '4G GPS Tracking Device G18',
+    description: 'Compact GPS tracker for real-time car monitoring.',
+    image: 'https://pictortelematics.com/public/images/1732280823_1727252776_G18%20pic.webp',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    id: 'car-gps-2',
+    title: '4G GPS Tracker with Bluetooth PS 10C',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1727252629_1727156282_ps10c-pictortelematics.png',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  
+  {
+    id: 'car-gps-2',
+    title: '4G GPS Tracker With Analog Input PS10 B',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1727252001_ps10b1.jpg',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    id: 'car-gps-2',
+    title: 'Vehicle GPS Tracker G17S',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1727250369_dc03cea0-57b6-4235-bf83-0a02fae19da8.jpeg',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    id: 'car-gps-2',
+    title: '2G Car GPS Tracker PT 101B',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1727285694_1d78b1ff-3ff2-4aaa-ab61-8a8ef3fcca8b.jpeg',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    id: 'car-gps-2',
+    title: 'GPS Tracker For Vehicles GS 900C',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1727074519_GS%20900%20%282G%2B4G%29.jpeg',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    id: 'car-gps-2',
+    title: '4G Fleet Tracking Device PS10A',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1727252001_ps10b1.jpg',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    id: 'car-gps-2',
+    title: 'OBD Car GPS Tracker PS25',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1716383938_PS125%201.png',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    id: 'car-gps-2',
+    title: '4G GPS Tracker With Analog Input PS10 BC',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1716293182_1.png',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    id: 'car-gps-2',
+    title: '4G GPS Tracker With Analog Input PS10 BC',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1727252001_ps10b1.jpg',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    id: 'car-gps-2',
+    title: '4G GPS Tracker With Analog Input PS10 BC',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1727252001_ps10b1.jpg',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    id: 'car-gps-2',
+    title: '4G GPS Tracker With Analog Input PS10 BC',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1727252001_ps10b1.jpg',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    id: 'car-gps-2',
+    title: '4G GPS Tracker With Analog Input PS10 BC',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1727252001_ps10b1.jpg',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+
+  //bike
+  {
+    id: 'bike-gps-1',
+    title: 'BikeGuard Tracker Lite',
+    description: 'Real-time tracking system for bikes.',
+    image: 'https://www.autobest.co.in/images/product/287_1.jpg',
+    icon: MapPin,
+    category: 'bike-gps',
+    color: 'from-green-400 to-emerald-500'
+  },
+  {
+    id: 'bike-gps-2',
+    title: 'BikeSafe 4G GPS',
+    description: 'Waterproof, SIM-enabled GPS for bikes.',
+    image: 'https://5.imimg.com/data5/SELLER/Default/2023/6/317927723/ZN/WW/YZ/109016735/bike-gps-tracker.jpg',
+    icon: MapPin,
+    category: 'bike-gps',
+    color: 'from-green-400 to-emerald-500'
+  },
+
+  //bus
+  {
+    id: 'bus-track-1',
+    title: 'SchoolBus Track Pro',
+    description: 'Bus tracker with parent notification system.',
+    image: 'https://static.toiimg.com/thumb/msid-100153876,imgsize-27822,width-400,resizemode-4/100153876.jpg',
+    icon: MapPin,
+    category: 'bus-tracking',
+    color: 'from-purple-400 to-pink-500'
+  },
+  {
+    id: 'bus-track-2',
+    title: 'CityBus Live Map',
+    description: 'Live location sharing for city transport.',
+    image: 'https://cdn.dribbble.com/users/2205412/screenshots/14534484/media/3420c0ac0df79dc61f5be72a24c7e803.jpg',
+    icon: MapPin,
+    category: 'bus-tracking',
+    color: 'from-purple-400 to-pink-500'
+  },
+
+  //truck
+  {
+    id: 'truck-track-1',
+    title: 'FleetPro GPS Heavy',
+    description: 'Heavy-duty GPS for long-haul trucking.',
+    image: 'https://tracktechsolutions.in/wp-content/uploads/2021/10/Truck-tracking-GPS.jpeg',
+    icon: MapPin,
+    category: 'truck-tracking',
+    color: 'from-orange-400 to-red-500'
+  },
+  {
+    id: 'truck-track-2',
+    title: 'CargoMon Vehicle Tracker',
+    description: 'Logistics-focused truck monitoring system.',
+    image: 'https://toppicks.co.in/wp-content/uploads/2022/12/61dWyCz0-gL.jpg',
+    icon: MapPin,
+    category: 'truck-tracking',
+    color: 'from-orange-400 to-red-500'
+  },
+];
 
 const Products = () => {
-  const products = [
-    {
-      id: 'iot-development-boards',
-      icon: Cpu,
-      title: 'IoT Development Boards',
-      description: 'Designed for developers and hobbyists to create and prototype IoT applications quickly and efficiently.',
-      features: [
-        'Multiple connectivity options (Wi-Fi, Bluetooth, LoRa, etc.)',
-        'User-friendly interface',
-        'Extensive documentation and support'
-      ],
-      applications: [
-        'Prototyping IoT devices',
-        'Educational purposes',
-        'Home automation projects'
-      ],
-      image: 'https://i.pinimg.com/736x/90/56/d3/9056d37cff0fcead7492b2a4fb4b01cf.jpg',
-      color: 'from-blue-400 to-cyan-500'
-    },
-    {
-      id: 'gps-tracker',
-      icon: MapPin,
-      title: 'GPS Tracker',
-      description: 'A reliable device that enables real-time tracking of vehicles, assets, or individuals.',
-      features: [
-        'Real-time location tracking',
-        'Geo-fencing capabilities',
-        'Long battery life'
-      ],
-      applications: [
-        'Vehicle tracking',
-        'Asset management',
-        'Personal tracking'
-      ],
-      image: 'https://i.pinimg.com/736x/e3/a3/6f/e3a36f0cd78ae2c2a37807ec60e0d30f.jpg',
-      color: 'from-green-400 to-emerald-500'
-    },
-    {
-      id: 'payphone',
-      icon: Phone,
-      title: 'PayPhone',
-      description: 'An innovative solution designed for schools and colleges, allowing students to make phone calls securely.',
-      features: [
-        'RFID access for authorized users',
-        'Secure payment options',
-        'User-friendly interface'
-      ],
-      applications: [
-        'Campus communication',
-        'Student services'
-      ],
-      image: 'https://www.renderhub.com/spiritswitchboard/payphone-standalone-unit/payphone-standalone-unit-01.jpg',
-      color: 'from-purple-400 to-pink-500'
-    },
-    {
-      id: 'aquasafe',
-      icon: Droplets,
-      title: 'AquaSafe',
-      description: 'A state-of-the-art water quality monitoring system designed to ensure safe and clean water.',
-      features: [
-        'Real-time monitoring of water quality',
-        'Alerts for parameter deviations',
-        'Easy integration with existing systems'
-      ],
-      applications: [
-        'Aquaculture',
-        'Water resource management',
-        'Environmental monitoring'
-      ],
-      image: 'https://t3.ftcdn.net/jpg/06/41/72/60/360_F_641726033_86u5pYTNCXQIdgOq80Xvy9IycAJgtsDs.jpg',
-      color: 'from-cyan-400 to-blue-500'
-    },
-    {
-      id: 'rfid-tripod-turnstile',
-      icon: Shield,
-      title: 'RFID Tripod Turnstile',
-      description: 'A secure and efficient access control solution for various applications.',
-      features: [
-        'RFID reader for easy access',
-        'Durable construction',
-        'User-friendly design'
-      ],
-      applications: [
-        'Office buildings',
-        'Events and venues',
-        'Public transportation'
-      ],
-      image: 'https://www.elefinetech.com/wp-content/uploads/2021/12/tripod-turnstile-13.jpg',
-      color: 'from-orange-400 to-red-500'
-    },
-    {
-      id: 'token-kiosk',
-      icon: Ticket,
-      title: 'Token Kiosk',
-      description: 'An innovative solution for managing queues and enhancing customer service.',
-      features: [
-        'User-friendly touchscreen interface',
-        'Real-time queue management',
-        'Customizable options'
-      ],
-      applications: [
-        'Hospitals',
-        'Banks',
-        'Retail environments'
-      ],
-      image: 'https://i.pinimg.com/736x/d4/eb/c9/d4ebc9dfe6f7a0b69269a1979cc6378a.jpg',
-      color: 'from-indigo-400 to-purple-500'
-    }
-  ];
+  const [searchParams] = useSearchParams();
+  const selectedCategory = searchParams.get('category') || 'all';
+
+  const filteredProducts =
+    selectedCategory === 'all'
+      ? products
+      : products.filter((product) => product.category === selectedCategory);
 
   return (
     <div className="pt-20 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-5xl font-bold text-white mb-4">
             Our <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Products</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            At Purple Techno Solutions, we specialize in innovative IoT products designed to meet the diverse needs of our customers.
-          </p>
+          <p className="text-gray-300 text-lg">Browse by category or explore all 110+ products.</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {products.map((product, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/20 hover:border-cyan-400/50 transition-all duration-300"
-            >
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-r ${product.color} opacity-20`}></div>
-                <div className={`absolute top-4 left-4 w-12 h-12 bg-gradient-to-r ${product.color} rounded-xl flex items-center justify-center`}>
-                  <product.icon className="h-6 w-6 text-white" />
-                </div>
-              </div>
-              
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-4">{product.title}</h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">{product.description}</p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="text-lg font-semibold text-cyan-400 mb-3">Features:</h4>
-                    <ul className="space-y-2">
-                      {product.features.map((feature, idx) => (
-                        <li key={idx} className="text-gray-300 text-sm flex items-start">
-                          <span className="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-lg font-semibold text-purple-400 mb-3">Applications:</h4>
-                    <ul className="space-y-2">
-                      {product.applications.map((app, idx) => (
-                        <li key={idx} className="text-gray-300 text-sm flex items-start">
-                          <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          {app}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <Link to={`/products/${product.id}`}>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`mt-6 bg-gradient-to-r ${product.color} text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300`}
+        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10">
+          {/* Sidebar */}
+          <aside className="bg-white/10 p-6 rounded-xl border border-white/10 space-y-4 backdrop-blur max-h-[80vh] overflow-y-auto">
+            <h2 className="text-xl font-semibold text-white">Product Categories</h2>
+            <ul className="space-y-3">
+              {productCategories.map((cat) => (
+                <li key={cat.id}>
+                  <Link
+                    to={`/products?category=${cat.id}`}
+                    className={`flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium w-full text-left transition ${
+                      selectedCategory === cat.id
+                        ? 'bg-purple-500/30 text-white'
+                        : 'text-gray-300 hover:text-white hover:bg-purple-500/10'
+                    }`}
                   >
-                    Learn More
-                  </motion.button>
-                </Link>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                    <cat.icon className="w-5 h-5 text-cyan-400" />
+                    <span>{cat.label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </aside>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mt-16"
-        >
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Explore Our Products Today!
-          </h2>
-          <p className="text-lg text-gray-300 mb-8">
-            If you're interested in any of our products or need more information, please contact us or visit our Shop page.
-          </p>
-          <Link to="/contact">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
-            >
-              Contact Us Today
-            </motion.button>
-          </Link>
-        </motion.div>
+          {/* Product Cards */}
+          <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+            {filteredProducts.length === 0 ? (
+              <p className="text-gray-300 text-lg col-span-full">No products found in this category.</p>
+            ) : (
+              filteredProducts.map((product, index) => (
+                <Link
+                to={`/products/${product.id}`}
+                key={index}
+                className="group bg-white/10 hover:border-cyan-400 border border-white/10 rounded-2xl overflow-hidden transition"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="relative h-80 overflow-hidden"
+                >
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-r ${product.color} opacity-20`} />
+                  <div className={`absolute top-4 left-4 w-12 h-12 rounded-xl bg-gradient-to-r ${product.color} flex items-center justify-center`}>
+                    <product.icon className="w-6 h-6 text-white" />
+                  </div>
+                </motion.div>
+              
+                <div className="p-4 space-y-2">
+                  <h3 className="text-lg font-semibold text-white">{product.title}</h3>
+                  <p className="text-gray-400 text-xs">{product.description}</p>
+                </div>
+              </Link>
+              
+              ))
+            )}
+          </section>
+        </div>
       </div>
     </div>
   );
