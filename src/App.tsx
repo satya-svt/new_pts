@@ -48,3 +48,4 @@ function App() {
 
 export default App;
 
+// This code sets up a React application with routing using React Router.
