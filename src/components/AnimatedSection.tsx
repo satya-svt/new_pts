@@ -22,4 +22,3 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ className, children }
 
 export default AnimatedSection;
 
-// This component uses Framer Motion to animate the opacity and vertical position of its children when they come into view.

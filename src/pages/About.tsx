@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Target, Eye, Users, Award, Lightbulb, Heart, Phone, Mail } from 'lucide-react';
 
 const About = () => {
@@ -51,6 +52,7 @@ const About = () => {
   return (
     <div className="pt-20 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,7 +67,7 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* Mission and Vision */}
+        {/* Mission & Vision */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -123,7 +125,7 @@ const About = () => {
           <h2 className="text-4xl font-bold text-white text-center mb-12">
             Why <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Choose Us?</span>
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <motion.div
@@ -157,7 +159,7 @@ const About = () => {
           <p className="text-lg text-gray-300 text-center mb-12 max-w-3xl mx-auto">
             Our team comprises passionate professionals with diverse backgrounds in technology, engineering, and business. Together, we bring a wealth of experience and expertise to the table.
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <motion.div
@@ -179,7 +181,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Call to Action */}
+        {/* Contact Us CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -192,42 +194,38 @@ const About = () => {
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             As we continue to innovate and expand our offerings, we invite you to join us on our journey toward transforming the IoT landscape. Whether you are a business looking for IoT solutions or an individual eager to learn about the latest technologies, Purple Techno Solutions is here to help.
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
+          <Link
+            to="/contact"
+            className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 inline-block"
           >
             Contact Us Today
-          </motion.button>
+          </Link>
+        </motion.div>
+
+        {/* Contact Details */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center bg-gradient-to-r from-cyan-400/20 to-purple-500/20 backdrop-blur-lg rounded-3xl p-12 border border-cyan-400/30 mt-16"
+        >
+          <h2 className="text-4xl font-bold text-white mb-6">Get in Touch</h2>
+          <p className="text-gray-300 mb-4 flex items-center justify-center gap-2">
+            <Phone className="w-5 h-5" /> 9346934699, 9618743699
+          </p>
+          <p className="text-gray-300 mb-4 flex items-center justify-center gap-2">
+            <Mail className="w-5 h-5" /> purpletechnosolutions@gmail.com, support@purpletechnologies.in
+          </p>
+          <a
+            href="/public/Copy of Company Profile Presentation.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-8 bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
+          >
+            View Company Profile (PDF)
+          </a>
         </motion.div>
       </div>
-      <motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-  className="text-center bg-gradient-to-r from-cyan-400/20 to-purple-500/20 backdrop-blur-lg rounded-3xl p-12 border border-cyan-400/30"
->
-  <h2 className="text-4xl font-bold text-white mb-6">
-    Get in Touch
-  </h2>
-  <p className="text-gray-300 mb-4 flex items-center justify-center gap-2">
-    <Phone className="w-5 h-5" /> 9346934699, 9618743699
-  </p>
-  <p className="text-gray-300 mb-4 flex items-center justify-center gap-2">
-    <Mail className="w-5 h-5" /> purpletechnosolutions@gmail.com, support@purpletechnologies.in
-  </p>
-
-  {/* PDF Button */}
-  <a
-    href="public/Copy of Company Profile Presentation.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-block mt-8 bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
-  >
-    View Company Profile (PDF)
-  </a>
-</motion.div>
-
     </div>
   );
 };

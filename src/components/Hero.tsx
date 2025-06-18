@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -66,19 +67,14 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
-             
-             
-             
-
-<Link to="/products">
-  <span className="relative z-10">Get Started</span>
+          <Link to="/products">
+  <button className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
+    <span className="relative z-10">GET STARTED</span>
+    <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+  </button>
 </Link>
 
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
-            </button>
-            
-            
+           
           </div>
         </div>
       </div>

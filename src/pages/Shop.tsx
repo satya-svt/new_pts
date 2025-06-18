@@ -1,39 +1,24 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ShoppingCart, ExternalLink, Star, Shield, Truck, HeadphonesIcon } from 'lucide-react';
 
 const Shop = () => {
+  const navigate = useNavigate(); // for navigation
+  const handleShopRedirect = () => {
+    window.open('https://diykit.in', '_blank');
+  };
+  const handleContactRedirect = () => {
+    navigate('/contact');
+  };
+
   const categories = [
-    {
-      name: 'IoT Development Boards',
-      icon: '🔧',
-      color: 'from-blue-400 to-cyan-500'
-    },
-    {
-      name: 'Sensors and Modules',
-      icon: '📡',
-      color: 'from-green-400 to-emerald-500'
-    },
-    {
-      name: 'GPS Tracking Devices',
-      icon: '🗺️',
-      color: 'from-purple-400 to-pink-500'
-    },
-    {
-      name: 'Smart Home Solutions',
-      icon: '🏠',
-      color: 'from-orange-400 to-red-500'
-    },
-    {
-      name: 'Wearable Technology',
-      icon: '⌚',
-      color: 'from-indigo-400 to-purple-500'
-    },
-    {
-      name: 'DIY Kits and Accessories',
-      icon: '🛠️',
-      color: 'from-cyan-400 to-teal-500'
-    }
+    { name: 'IoT Development Boards', icon: '🔧', color: 'from-blue-400 to-cyan-500' },
+    { name: 'Sensors and Modules', icon: '📡', color: 'from-green-400 to-emerald-500' },
+    { name: 'GPS Tracking Devices', icon: '🗺️', color: 'from-purple-400 to-pink-500' },
+    { name: 'Smart Home Solutions', icon: '🏠', color: 'from-orange-400 to-red-500' },
+    { name: 'Wearable Technology', icon: '⌚', color: 'from-indigo-400 to-purple-500' },
+    { name: 'DIY Kits and Accessories', icon: '🛠️', color: 'from-cyan-400 to-teal-500' }
   ];
 
   const features = [
@@ -63,13 +48,10 @@ const Shop = () => {
     }
   ];
 
-  const handleShopRedirect = () => {
-    window.open('https://diykit.in', '_blank');
-  };
-
   return (
     <div className="pt-20 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -84,19 +66,15 @@ const Shop = () => {
           </p>
         </motion.div>
 
-        {/* E-commerce Platform CTA */}
+        {/* E-commerce CTA */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="bg-gradient-to-r from-cyan-400/20 to-purple-500/20 backdrop-blur-lg rounded-3xl p-8 border border-cyan-400/30 mb-16 text-center"
         >
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Explore Our E-Commerce Platform
-          </h2>
-          <p className="text-lg text-gray-300 mb-6">
-            To browse and purchase our products, please visit our dedicated e-commerce platform:
-          </p>
+          <h2 className="text-3xl font-bold text-white mb-4">Explore Our E-Commerce Platform</h2>
+          <p className="text-lg text-gray-300 mb-6">To browse and purchase our products, please visit our dedicated e-commerce platform:</p>
           <motion.button
             onClick={handleShopRedirect}
             whileHover={{ scale: 1.05 }}
@@ -109,7 +87,7 @@ const Shop = () => {
           </motion.button>
         </motion.div>
 
-        {/* Product Categories */}
+        {/* Categories */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +97,6 @@ const Shop = () => {
           <h2 className="text-4xl font-bold text-white text-center mb-12">
             Product <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Categories</span>
           </h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categories.map((category, index) => (
               <motion.div
@@ -140,7 +117,7 @@ const Shop = () => {
           </div>
         </motion.div>
 
-        {/* Why Shop With Us */}
+        {/* Features */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -150,7 +127,6 @@ const Shop = () => {
           <h2 className="text-4xl font-bold text-white text-center mb-12">
             Why Shop <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">With Us?</span>
           </h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <motion.div
@@ -158,7 +134,7 @@ const Shop = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, rotateY: 5 }}
+                whileHover={{ scale: 1.05 }}
                 className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:border-purple-400/50 transition-all duration-300 text-center"
               >
                 <div className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mx-auto mb-4`}>
@@ -171,7 +147,7 @@ const Shop = () => {
           </div>
         </motion.div>
 
-        {/* Newsletter Signup */}
+        {/* Newsletter */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -179,10 +155,7 @@ const Shop = () => {
           className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30 text-center"
         >
           <h2 className="text-3xl font-bold text-white mb-4">Stay Updated!</h2>
-          <p className="text-lg text-gray-300 mb-6">
-            Sign up for our newsletter to receive updates on new arrivals, exclusive discounts, and special offers directly to your inbox.
-          </p>
-          
+          <p className="text-lg text-gray-300 mb-6">Sign up for our newsletter to receive updates on new arrivals, exclusive discounts, and special offers directly to your inbox.</p>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -204,7 +177,7 @@ const Shop = () => {
           </motion.div>
         </motion.div>
 
-        {/* Final CTA */}
+        {/* Final CTA with contact */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -212,10 +185,9 @@ const Shop = () => {
           className="text-center mt-16"
         >
           <h2 className="text-3xl font-bold text-white mb-4">Happy Shopping!</h2>
-          <p className="text-lg text-gray-300 mb-8">
-            For any inquiries or assistance, please feel free to contact us.
-          </p>
+          <p className="text-lg text-gray-300 mb-8">For any inquiries or assistance, please feel free to contact us.</p>
           <motion.button
+            onClick={handleContactRedirect}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"

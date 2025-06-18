@@ -12,7 +12,6 @@ import Apps from './pages/Apps';
 import Shop from './pages/Shop';
 import About from './pages/About';
 import Blog from './pages/Blog';
-import BlogDetail from './pages/blogdetail';
 
 import Contact from './pages/Contact';
 
@@ -36,7 +35,6 @@ function App() {
             <Route path="/shop" element={<Shop />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </motion.main>
@@ -47,5 +45,3 @@ function App() {
 }
 
 export default App;
-
-// This code sets up a React application with routing using React Router.

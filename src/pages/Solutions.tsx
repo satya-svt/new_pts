@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Smartphone, Building, Home } from 'lucide-react';
 
+
 const Solutions = () => {
   const solutions = [
     {

@@ -1,20 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
-<div className="flex space-x-4">
-  {[Facebook, Twitter, Linkedin, Instagram].map((Icon, index) => (
-    <motion.a
-      key={index}
-      whileHover={{ scale: 1.2, rotate: 10 }}
-      href="#"
-      className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-300"
-    >
-      <Icon className="h-5 w-5 text-white" />
-    </motion.a>
-  ))}
-</div>
-
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -41,18 +28,27 @@ const Footer = () => {
               Your one-stop end-to-end IoT product development company. We bring your IoT ideas to life, from concept to final product.
             </p>
             <div className="flex space-x-4">
-                {[Facebook, Twitter, Linkedin, Instagram].map((Icon, index) => (
-    <motion.a
-      key={index}
-      whileHover={{ scale: 1.2, rotate: 10 }}
-      href="#"
-      className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-300"
-    >
-      <Icon className="h-5 w-5 text-white" />
-    </motion.a>
-  ))}
-</div>
-
+              {[
+                { icon: Facebook, link: 'https://www.facebook.com/ptsvij' },
+                { icon: Linkedin, link: 'https://linkedin.com/company/purpletechnosolutions' },
+                { icon: Instagram, link: 'https://instagram.com/purpletechnosolutions' },
+                {
+                  icon: MapPin,
+                  link: 'https://www.google.com/maps/place/Purple+Technologies/@16.5012862,80.6387101,19.26z/data=!4m15!1m8!3m7!1s0x3a35eff9482d944b:0x939b7e84ab4a0265!2sVijayawada,+Andhra+Pradesh!3b1!8m2!3d16.5061743!4d80.6480153!16zL20vMDM4NWs3!3m5!1s0x3a35faaf6003112d:0xb876e5b253c85713!8m2!3d16.5014281!4d80.6395267!16s%2Fg%2F11b7y76rvv?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D'
+                }
+              ].map(({ icon: Icon, link }, index) => (
+                <motion.a
+                  key={index}
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-300"
+                >
+                  <Icon className="h-5 w-5 text-white" />
+                </motion.a>
+              ))}
+            </div>
           </motion.div>
 
           <motion.div
