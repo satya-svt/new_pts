@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 interface AnimatedSectionProps {
   className?: string;
   children: React.ReactNode;
+  animation?: string; 
+  delay?: number;
 }
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ className, children }) => {
@@ -19,6 +21,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ className, children }
     </motion.div>
   );
 };
+
 
 export default AnimatedSection;
 

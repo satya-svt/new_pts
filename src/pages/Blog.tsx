@@ -1,26 +1,16 @@
 import React, { useState } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
 import { Search, Calendar, User, ArrowRight, Tag } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-interface BlogPost {
-  id: number;
-  title: string;
-  excerpt: string;
-  author: string;
-  date: string;
-  category: string;
-  image: string;
-  readTime: string;
-  tags: string[];
-}
+const Blog = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const navigate = useNavigate();
 
-const Blog: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState<string>('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const categories = ['All', 'IoT Trends', 'Tutorials', 'Case Studies', 'Industry News', 'Product Updates'];
 
-  const categories: string[] = ['All', 'IoT Trends', 'Tutorials', 'Case Studies', 'Industry News', 'Product Updates'];
-
-  const blogPosts: BlogPost[] = [
+  const blogPosts = [
     {
       id: 1,
       title: 'The Future of IoT in Smart Cities',
@@ -30,7 +20,7 @@ const Blog: React.FC = () => {
       category: 'IoT Trends',
       image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg',
       readTime: '5 min read',
-      tags: ['Smart Cities', 'Urban Planning', 'IoT'],
+      tags: ['Smart Cities', 'Urban Planning', 'IoT']
     },
     {
       id: 2,
@@ -41,7 +31,7 @@ const Blog: React.FC = () => {
       category: 'Tutorials',
       image: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg',
       readTime: '12 min read',
-      tags: ['Tutorial', 'Hardware', 'Beginner'],
+      tags: ['Tutorial', 'Hardware', 'Beginner']
     },
     {
       id: 3,
@@ -52,7 +42,7 @@ const Blog: React.FC = () => {
       category: 'Case Studies',
       image: 'https://images.pexels.com/photos/7594435/pexels-photo-7594435.jpeg',
       readTime: '8 min read',
-      tags: ['Agriculture', 'Case Study', 'Success Story'],
+      tags: ['Agriculture', 'Case Study', 'Success Story']
     },
     {
       id: 4,
@@ -63,7 +53,7 @@ const Blog: React.FC = () => {
       category: 'Industry News',
       image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg',
       readTime: '7 min read',
-      tags: ['Security', 'Best Practices', 'Industry'],
+      tags: ['Security', 'Best Practices', 'Industry']
     },
     {
       id: 5,
@@ -74,7 +64,7 @@ const Blog: React.FC = () => {
       category: 'Product Updates',
       image: 'https://images.pexels.com/photos/8386422/pexels-photo-8386422.jpeg',
       readTime: '4 min read',
-      tags: ['Product Update', 'AquaSafe', 'Water Quality'],
+      tags: ['Product Update', 'AquaSafe', 'Water Quality']
     },
     {
       id: 6,
@@ -85,14 +75,24 @@ const Blog: React.FC = () => {
       category: 'IoT Trends',
       image: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg',
       readTime: '9 min read',
-      tags: ['Edge Computing', 'Performance', 'Architecture'],
+      tags: ['Edge Computing', 'Performance', 'Architecture']
     },
+    {
+      id: 7,
+      title: 'Edge Computing in IoT: Benefits and Implementation',
+      excerpt: 'Understanding how edge computing can reduce latency and improve efficiency in IoT applications.',
+      author: 'Priya Sharma',
+      date: '2023-12-20',
+      category: 'IoT Trends',
+      image: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg',
+      readTime: '9 min read',
+      tags: ['Edge Computing', 'Performance', 'Architecture']
+    }
   ];
 
-  const filteredPosts: BlogPost[] = blogPosts.filter((post) => {
-    const matchesSearch =
-      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
@@ -113,6 +113,39 @@ const Blog: React.FC = () => {
           </p>
         </AnimatedSection>
 
+        {/* Search and Filter */}
+        <AnimatedSection className="mb-12">
+          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+            <div className="relative flex-1 max-w-md">
+              {/* <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} /> */}
+              {/* <input
+                type="text"
+                // placeholder="Search articles..."
+                // value={searchTerm}
+                // onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-12 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors duration-300"
+              /> */}
+            </div>
+            
+            {/* <div className="flex flex-wrap gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    selectedCategory === category
+                      ? 'bg-gradient-to-r from-purple-600 to-cyan-600 text-white'
+                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div> */}
+          </div>
+        </AnimatedSection>
+
+        {/* Featured Post */}
         <AnimatedSection className="mb-16">
           <div className="relative group cursor-pointer">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -129,7 +162,7 @@ const Blog: React.FC = () => {
                   </span>
                 </div>
               </div>
-
+              
               <div>
                 <div className="flex items-center text-sm text-gray-400 mb-4">
                   <Calendar size={16} className="mr-2" />
@@ -140,15 +173,15 @@ const Blog: React.FC = () => {
                   <span className="mx-2">•</span>
                   {featuredPost.readTime}
                 </div>
-
+                
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white group-hover:text-purple-300 transition-colors duration-300">
                   {featuredPost.title}
                 </h2>
-
+                
                 <p className="text-lg text-gray-300 mb-6 leading-relaxed">
                   {featuredPost.excerpt}
                 </p>
-
+                
                 <div className="flex flex-wrap gap-2 mb-6">
                   {featuredPost.tags.map((tag, index) => (
                     <span
@@ -160,8 +193,11 @@ const Blog: React.FC = () => {
                     </span>
                   ))}
                 </div>
-
-                <button className="group/btn relative px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
+                
+                <button
+                  className="group/btn relative px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+                  onClick={() => navigate(`/blog/${featuredPost.id}`)}
+                >
                   <span className="relative z-10 flex items-center">
                     Read More
                     <ArrowRight size={16} className="ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
@@ -173,6 +209,7 @@ const Blog: React.FC = () => {
           </div>
         </AnimatedSection>
 
+        {/* Other Posts */}
         <AnimatedSection>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {otherPosts.map((post, index) => (
@@ -184,7 +221,7 @@ const Blog: React.FC = () => {
               >
                 <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-purple-500/20 hover:border-purple-400/40 transition-all duration-500 hover:scale-105 overflow-hidden h-full">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-cyan-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
+                  
                   <div className="relative">
                     <div className="h-48 overflow-hidden">
                       <img
@@ -199,7 +236,7 @@ const Blog: React.FC = () => {
                         </span>
                       </div>
                     </div>
-
+                    
                     <div className="p-6 flex flex-col h-full">
                       <div className="flex items-center text-xs text-gray-400 mb-3">
                         <Calendar size={14} className="mr-1" />
@@ -207,15 +244,15 @@ const Blog: React.FC = () => {
                         <span className="mx-2">•</span>
                         {post.readTime}
                       </div>
-
+                      
                       <h3 className="text-xl font-bold mb-3 text-white group-hover:text-purple-300 transition-colors duration-300 line-clamp-2">
                         {post.title}
                       </h3>
-
+                      
                       <p className="text-gray-300 text-sm leading-relaxed mb-4 flex-grow">
                         {post.excerpt}
                       </p>
-
+                      
                       <div className="flex flex-wrap gap-1 mb-4">
                         {post.tags.slice(0, 2).map((tag, idx) => (
                           <span
@@ -226,14 +263,17 @@ const Blog: React.FC = () => {
                           </span>
                         ))}
                       </div>
-
+                      
                       <div className="flex items-center justify-between pt-4 border-t border-gray-700">
                         <div className="flex items-center text-sm text-gray-400">
                           <User size={14} className="mr-1" />
                           {post.author}
                         </div>
-
-                        <button className="text-purple-400 hover:text-purple-300 transition-colors duration-300">
+                        
+                        <button
+                          className="text-purple-400 hover:text-purple-300 transition-colors duration-300"
+                          onClick={() => navigate(`/blog/${post.id}`)}
+                        >
                           <ArrowRight size={16} />
                         </button>
                       </div>
@@ -242,6 +282,36 @@ const Blog: React.FC = () => {
                 </div>
               </AnimatedSection>
             ))}
+          </div>
+        </AnimatedSection>
+
+        {/* Newsletter Signup */}
+        <AnimatedSection className="mt-20">
+          <div className="text-center">
+            <div className="relative p-12 bg-gradient-to-r from-purple-900/20 via-gray-900/50 to-cyan-900/20 rounded-3xl border border-purple-500/30">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-cyan-600/10 rounded-3xl blur-3xl"></div>
+              
+              <div className="relative z-10">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                  Stay Updated
+                </h2>
+                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                  Subscribe to our newsletter for the latest IoT insights, tutorials, and industry updates delivered to your inbox.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors duration-300"
+                  />
+                  <button className="group relative px-8 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
+                    <span className="relative z-10">Subscribe</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </AnimatedSection>
       </div>

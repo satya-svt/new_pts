@@ -97,7 +97,7 @@ const products = [
   },
   {
     id: 'car-gps-2',
-    title: '4G GPS Tracker With Analog Input PS10 BC',
+    title: 'BLE Enabled 4G OBD2 Tracker TLD2 D',
     description: 'Advanced GPS with ignition cut-off feature.',
     image: 'https://pictortelematics.com/public/images/1716293182_1.png',
     icon: MapPin,
@@ -106,36 +106,54 @@ const products = [
   },
   {
     id: 'car-gps-2',
-    title: '4G GPS Tracker With Analog Input PS10 BC',
+    title: 'GPS Tracker with AC and Door Detection P09N',
     description: 'Advanced GPS with ignition cut-off feature.',
-    image: 'https://pictortelematics.com/public/images/1727252001_ps10b1.jpg',
+    image: 'https://pictortelematics.com/public/images/1716282146_2.png',
     icon: MapPin,
     category: 'car-gps',
     color: 'from-blue-400 to-cyan-500'
   },
   {
     id: 'car-gps-2',
-    title: '4G GPS Tracker With Analog Input PS10 BC',
+    title: 'OBD2 GPS Vehicle Tracker T8608',
     description: 'Advanced GPS with ignition cut-off feature.',
-    image: 'https://pictortelematics.com/public/images/1727252001_ps10b1.jpg',
+    image: 'https://pictortelematics.com/public/images/1716203326_1.png',
     icon: MapPin,
     category: 'car-gps',
     color: 'from-blue-400 to-cyan-500'
   },
   {
     id: 'car-gps-2',
-    title: '4G GPS Tracker With Analog Input PS10 BC',
+    title: 'PS06 GPS Tracker with SOS',
     description: 'Advanced GPS with ignition cut-off feature.',
-    image: 'https://pictortelematics.com/public/images/1727252001_ps10b1.jpg',
+    image: 'https://pictortelematics.com/public/images/1715857385_1.png',
     icon: MapPin,
     category: 'car-gps',
     color: 'from-blue-400 to-cyan-500'
   },
   {
     id: 'car-gps-2',
-    title: '4G GPS Tracker With Analog Input PS10 BC',
+    title: 'P19S GPS Tracker with SOS and Voice Monitoring',
     description: 'Advanced GPS with ignition cut-off feature.',
-    image: 'https://pictortelematics.com/public/images/1727252001_ps10b1.jpg',
+    image: 'https://pictortelematics.com/public/images/1715849325_1.png',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    id: 'car-gps-2',
+    title: 'P19S GPS Tracker with SOS and Voice Monitoring',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1715849325_1.png',
+    icon: MapPin,
+    category: 'car-gps',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    id: 'car-gps-2',
+    title: 'P19S GPS Tracker with SOS and Voice Monitoring',
+    description: 'Advanced GPS with ignition cut-off feature.',
+    image: 'https://pictortelematics.com/public/images/1715849325_1.png',
     icon: MapPin,
     category: 'car-gps',
     color: 'from-blue-400 to-cyan-500'
@@ -144,18 +162,90 @@ const products = [
   //bike
   {
     id: 'bike-gps-1',
-    title: 'BikeGuard Tracker Lite',
+    title: 'PT17H GPS Tracker',
     description: 'Real-time tracking system for bikes.',
-    image: 'https://www.autobest.co.in/images/product/287_1.jpg',
+    image: 'https://pictortelematics.com/public/images/1715844891_1.png',
     icon: MapPin,
     category: 'bike-gps',
     color: 'from-green-400 to-emerald-500'
   },
   {
     id: 'bike-gps-2',
-    title: 'BikeSafe 4G GPS',
+    title: 'Advanced GPS Tracker with Door Detection : PX100',
     description: 'Waterproof, SIM-enabled GPS for bikes.',
-    image: 'https://5.imimg.com/data5/SELLER/Default/2023/6/317927723/ZN/WW/YZ/109016735/bike-gps-tracker.jpg',
+    image: 'https://pictortelematics.com/public/images/1715844891_1.png',
+    icon: MapPin,
+    category: 'bike-gps',
+    color: 'from-green-400 to-emerald-500'
+  },
+  {
+    id: 'bike-gps-2',
+    title: 'SchoolBus Track Pro',
+    description: 'Bus tracker with parent notification system.',
+    image: 'https://static.toiimg.com/thumb/msid-100153876,imgsize-27822,width-400,resizemode-4/100153876.jpg',
+    icon: MapPin,
+    category: 'bike-gps',
+    color: 'from-green-400 to-emerald-500'
+  },
+  {
+    id: 'bike-gps-2',
+    title: 'Advanced GPS Tracker with Door Detection : PX100',
+    description: 'Waterproof, SIM-enabled GPS for bikes.',
+    image: 'https://pictortelematics.com/public/images/1715778448_1.png',
+    icon: MapPin,
+    category: 'bike-gps',
+    color: 'from-green-400 to-emerald-500'
+  },
+  {
+    id: 'bike-gps-2',
+    title: 'Advanced GPS Tracker with Door Detection : PX100',
+    description: 'Waterproof, SIM-enabled GPS for bikes.',
+    image: 'https://pictortelematics.com/public/images/1715778448_1.png',
+    icon: MapPin,
+    category: 'bike-gps',
+    color: 'from-green-400 to-emerald-500'
+  },
+  {
+    id: 'bike-gps-2',
+    title: 'Advanced GPS Tracker with Door Detection : PX100',
+    description: 'Waterproof, SIM-enabled GPS for bikes.',
+    image: 'https://pictortelematics.com/public/images/1715778448_1.png',
+    icon: MapPin,
+    category: 'bike-gps',
+    color: 'from-green-400 to-emerald-500'
+  },
+  {
+    id: 'bike-gps-2',
+    title: 'Advanced GPS Tracker with Door Detection : PX100',
+    description: 'Waterproof, SIM-enabled GPS for bikes.',
+    image: 'https://pictortelematics.com/public/images/1715778448_1.png',
+    icon: MapPin,
+    category: 'bike-gps',
+    color: 'from-green-400 to-emerald-500'
+  },
+  {
+    id: 'bike-gps-2',
+    title: 'Advanced GPS Tracker with Door Detection : PX100',
+    description: 'Waterproof, SIM-enabled GPS for bikes.',
+    image: 'https://pictortelematics.com/public/images/1715778448_1.png',
+    icon: MapPin,
+    category: 'bike-gps',
+    color: 'from-green-400 to-emerald-500'
+  },
+  {
+    id: 'bike-gps-2',
+    title: 'Advanced GPS Tracker with Door Detection : PX100',
+    description: 'Waterproof, SIM-enabled GPS for bikes.',
+    image: 'https://pictortelematics.com/public/images/1715778448_1.png',
+    icon: MapPin,
+    category: 'bike-gps',
+    color: 'from-green-400 to-emerald-500'
+  },
+  {
+    id: 'bike-gps-2',
+    title: 'Advanced GPS Tracker with Door Detection : PX100',
+    description: 'Waterproof, SIM-enabled GPS for bikes.',
+    image: 'https://pictortelematics.com/public/images/1715778448_1.png',
     icon: MapPin,
     category: 'bike-gps',
     color: 'from-green-400 to-emerald-500'

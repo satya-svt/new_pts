@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import { motion } from 'framer-motion';
+import Marquee from "react-fast-marquee";
 import { Link } from 'react-router-dom';
 import { Target, Eye, Users, Award, Lightbulb, Heart, Phone, Mail } from 'lucide-react';
 
@@ -26,32 +28,104 @@ const About = () => {
   ];
 
   const teamMembers = [
-    {
-      name: 'Leadership Team',
-      role: 'Visionary Leaders',
-      description: 'Our leadership team is dedicated to fostering a culture of innovation and excellence, guiding our talented workforce toward achieving our mission and vision.',
-      icon: Target,
-      color: 'from-indigo-400 to-purple-500'
-    },
-    {
-      name: 'Development Team',
-      role: 'Technical Experts',
-      description: 'Our skilled developers and engineers work tirelessly to create and optimize IoT solutions, ensuring high-quality products that meet industry standards.',
-      icon: Lightbulb,
-      color: 'from-cyan-400 to-blue-500'
-    },
-    {
-      name: 'Support Team',
-      role: 'Customer Champions',
-      description: 'Our customer support team is always ready to assist you, providing expert guidance and support for all your inquiries.',
-      icon: Heart,
-      color: 'from-pink-400 to-red-500'
-    }
-  ];
+  {
+    name: 'KHADAR BABA SHAIK',
+    role: 'CEO & Founder',
+    description: 'Cloud Developer,Visionary leader driving innovation in IoT and embedded systems',
+    image: '',
+    expertise: 'Leadership & Embedded Systems'
+  },
+  {
+    name: 'MOBINA MD',
+    role: 'Managing Director',
+    description: 'Strategic operations and business development expert',
+    image: '',
+    expertise: 'Operations & Business Strategy'
+  },
+  {
+    name: 'ABDUL SHAIK',
+    role: 'Full Stack Developer',
+    description: 'Expert in modern web technologies and system architecture',
+    image: '',
+    expertise: 'Web Development & System Design'
+  },
+  {
+     name: 'BAVIRISETTI RESHAMA',
+      role: 'PCB Design',
+      description: 'Specialized in circuit design and hardware optimization',
+      gradient: 'from-orange-400 to-pink-500'
+
+  },
+  {
+    name: 'S RAMAKRISHNA',
+      role: 'Backend Developer',
+      description: 'Backend systems and database architecture specialist',
+      gradient: 'from-indigo-400 to-purple-500'
+
+  },
+  {
+    name: 'N MANIKANTA',
+      role: 'Full Stack Developer Python Developer',
+      description: 'Python development and machine learning integration',
+      gradient: 'from-teal-400 to-blue-500'
+  },
+  {
+   name: 'P SUDHKAR',
+      role: 'IOT Developer',
+      description: 'Internet of Things solutions and device connectivity',
+      gradient: 'from-purple-400 to-pink-500'
+
+  },
+  {
+     name: 'A REVANTH',
+      role: 'AWS Developer & Manager',
+      description: 'Cloud infrastructure and DevOps automation expert',
+      gradient: 'from-yellow-400 to-orange-500'
+
+  },
+
+];
+const publiclogos = [
+
+  "public/srmap.png",
+  "public/Ramachandra.png",
+  "public/VignansLara.png",
+  "public/srivasavi.png",
+  "public/vignans.png",
+   "public/vitap-removebg-preview.png",
+  "public/vignansNirula.png",
+  "public/vishnu.png",
+  "public/prodigy.png",
+  "public/eswar.png",
+  "public/Gomathi.png",
+  "public/IMAGE SIMS.png"
+];
+
+const publiclogos1 = [
+
+  "public/pictor.png",
+  "public/minemagma.png",
+  "public/sarman.png",
+  "public/infotech.png",
+  
+   
+];
+
+const publiclogos2 = [
+
+  "public/MICROSOFT.png",
+  "public/ACEBOT.png",
+  "public/WEMAKE.png",
+  "public/image-removebg-preview (6).png",
+  "public/aws2.png",
+   
+  
+];
 
   return (
     <div className="pt-20 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -63,12 +137,13 @@ const About = () => {
             About <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Us</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-            Welcome to Purple Techno Solutions, your one-stop solution for end-to-end IoT product development. We are a dynamic and innovative company committed to delivering cutting-edge IoT solutions that empower businesses and individuals to thrive in an increasingly connected world.
+            Welcome to Purple Techno Solutions, your one-stop solution for end-to-end IoT product development.
           </p>
         </motion.div>
 
         {/* Mission & Vision */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+          {/* Mission */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -80,10 +155,11 @@ const About = () => {
             </div>
             <h2 className="text-3xl font-bold text-white mb-4">Our Mission</h2>
             <p className="text-gray-300 leading-relaxed">
-              At Purple Techno Solutions, our mission is to simplify the process of developing and implementing IoT technologies, making them accessible to everyone. We strive to be at the forefront of the IoT revolution, providing tailored solutions that meet the unique needs of our clients.
+              To simplify the process of developing and implementing IoT technologies, making them accessible to everyone.
             </p>
           </motion.div>
 
+          {/* Vision */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -95,7 +171,7 @@ const About = () => {
             </div>
             <h2 className="text-3xl font-bold text-white mb-4">Our Vision</h2>
             <p className="text-gray-300 leading-relaxed">
-              We envision a future where IoT technology enhances everyday life and business operations, driving efficiency and innovation across various sectors. Our goal is to be the catalyst that transforms innovative ideas into reality.
+              To enhance everyday life and business operations through IoT innovations across sectors.
             </p>
           </motion.div>
         </div>
@@ -111,7 +187,7 @@ const About = () => {
             Our Parent Company: <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Purple Technologies</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Purple Techno Solutions is a proud subsidiary of Purple Technologies, a leader in technology training and solutions. Our affiliation with Purple Technologies allows us to leverage extensive industry knowledge and expertise, ensuring that we deliver the best possible solutions to our clients.
+            We are a proud subsidiary of Purple Technologies, enabling innovation and solutions in the IoT space.
           </p>
         </motion.div>
 
@@ -125,7 +201,6 @@ const About = () => {
           <h2 className="text-4xl font-bold text-white text-center mb-12">
             Why <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Choose Us?</span>
           </h2>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <motion.div
@@ -134,19 +209,19 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 whileHover={{ y: -10, scale: 1.05 }}
-                className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:border-cyan-400/50 transition-all duration-300 text-center"
+                className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:border-cyan-400/50 text-center"
               >
                 <div className={`w-16 h-16 bg-gradient-to-r ${value.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
                   <value.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">{value.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{value.description}</p>
+                <p className="text-gray-300">{value.description}</p>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Our Team */}
+        {/* Team Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -157,58 +232,64 @@ const About = () => {
             Our <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Team</span>
           </h2>
           <p className="text-lg text-gray-300 text-center mb-12 max-w-3xl mx-auto">
-            Our team comprises passionate professionals with diverse backgrounds in technology, engineering, and business. Together, we bring a wealth of experience and expertise to the table.
+            Meet our passionate professionals with expertise across IoT, software, hardware, and product innovation.
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ scale: 1.05, rotateY: 5 }}
-                className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:border-purple-400/50 transition-all duration-300"
+                className="bg-white/10 p-6 rounded-xl text-white text-center border border-white/20 backdrop-blur"
+                whileHover={{ scale: 1.05 }}
               >
-                <div className={`w-16 h-16 bg-gradient-to-r ${member.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
-                  <member.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2 text-center">{member.name}</h3>
-                <p className="text-cyan-400 text-center mb-4 font-semibold">{member.role}</p>
-                <p className="text-gray-300 text-center leading-relaxed">{member.description}</p>
+                <img src={member.image} alt={member.name} className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-purple-500" />
+                <h3 className="text-xl font-bold">{member.name}</h3>
+                <p className="text-sm text-gray-300">{member.role}</p>
+                <p className="mt-2 text-sm text-gray-400">{member.expertise}</p>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Contact Us CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center bg-gradient-to-r from-cyan-400/20 to-purple-500/20 backdrop-blur-lg rounded-3xl p-12 border border-cyan-400/30"
-        >
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Join Us on Our Journey
-          </h2>
-          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            As we continue to innovate and expand our offerings, we invite you to join us on our journey toward transforming the IoT landscape. Whether you are a business looking for IoT solutions or an individual eager to learn about the latest technologies, Purple Techno Solutions is here to help.
-          </p>
-          <Link
-            to="/contact"
-            className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 inline-block"
-          >
-            Contact Us Today
-          </Link>
-        </motion.div>
+        {/* Contact Us */}
 
-        {/* Contact Details */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center bg-gradient-to-r from-cyan-400/20 to-purple-500/20 backdrop-blur-lg rounded-3xl p-12 border border-cyan-400/30 mt-16"
-        >
+        {/* Contact Info */}
+         <h2 className="text-4xl font-bold text-white text-center mb-6">
+            Esteemed <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Clients</span>
+          </h2>
+
+          <Marquee speed={60} gradient={false} className="py-6 bg-white/10 rounded-xl my-8">
+{publiclogos1.map((url, i) => (
+  <img key={i} src={url} className="h-20 mx-20" />
+))}
+</Marquee>
+
+         <h2 className="text-4xl font-bold text-white text-center mb-6">
+           Global <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Partners</span>
+          </h2>
+
+          <Marquee speed={60} gradient={false} className="py-6 bg-white/10 rounded-xl my-8">
+{publiclogos2.map((url, i) => (
+  <img key={i} src={url} className="h-20 mx-10" />
+))}
+</Marquee>
+
+ <h2 className="text-4xl font-bold text-white text-center mb-6">
+            Educational <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Clients</span>
+          </h2>
+
+<Marquee speed={60} gradient={false} className="py-6 bg-white/10 rounded-xl my-8">
+{publiclogos.map((url, i) => (
+  <img key={i} src={url} className="h-20 mx-10" />
+))}
+</Marquee>
+
+  <motion.div
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="text-center bg-gradient-to-r from-cyan-400/20 to-purple-500/20 backdrop-blur-lg rounded-3xl p-12 border border-cyan-400/30 mt-16"
+>
+
           <h2 className="text-4xl font-bold text-white mb-6">Get in Touch</h2>
           <p className="text-gray-300 mb-4 flex items-center justify-center gap-2">
             <Phone className="w-5 h-5" /> 9346934699, 9618743699
@@ -225,6 +306,7 @@ const About = () => {
             View Company Profile (PDF)
           </a>
         </motion.div>
+
       </div>
     </div>
   );
