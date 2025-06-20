@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import { motion } from 'framer-motion';
 
 // Layout
@@ -37,6 +38,12 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<ProductDetail />} />
 
+            
+            {/* Blogs */}
+             <Route path="/blog" element={<Blog />} />
+             <Route path="/blog/:id" element={<BlogDetails />} />
+
+
             {/* Solutions */}
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/solutions/:id" element={<SolutionDetail />} />
@@ -46,7 +53,6 @@ function App() {
             <Route path="/shop" element={<Shop />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogDetails />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </motion.main>

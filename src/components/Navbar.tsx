@@ -85,7 +85,7 @@ const Navbar = () => {
                     {productLinks.map((product) => (
                       <button
                         key={product.category}
-                        onClick={() => navigate(`/products?category=${product.category}`)}
+                        onClick={() => navigate('/products?category=${product.category}')}
                         className="w-full text-left block px-4 py-2 text-sm text-gray-300 hover:bg-purple-500/20 hover:text-white rounded-md"
                       >
                         {product.name}
