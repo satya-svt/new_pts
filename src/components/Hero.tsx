@@ -11,7 +11,7 @@ const Hero = () => {
     'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg',
     'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg',
     'https://images.pexels.com/photos/8386422/pexels-photo-8386422.jpeg',
-    'https://images.pexels.com/photos/7594435/pexels-photo-7594435.jpeg'
+    'https://i.pinimg.com/736x/5b/e2/78/5be2781105238fe6fb5b037f0d6ccaab.jpg'
   ];
 
   useEffect(() => {

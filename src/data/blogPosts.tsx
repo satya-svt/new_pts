@@ -33,5 +33,17 @@ export interface BlogPost {
         category: "",
         tags: ['AWS', 'DevOps', 'CI/CD', 'Terraform', 'CloudWatch', 'Kubernetes'], 
       },
+     {
+  id: 3,
+  title: 'AI/ML ',
+  excerpt: 'Explore how Purple Technologies leverages AI/ML to enable automation, prediction, and intelligent business transformation.',
+  author: '',
+  date: '',
+  category: '',
+  image: 'https://i.pinimg.com/736x/f7/8c/ef/f78cef0dd20b57db43cc6c93cc4e7303.jpg', // Replace with AI-related image if needed
+  readTime: '',
+  tags: ['AI', 'MachineLearning', 'MLOps', 'Python', 'NLP'],
+}
+
     // Add more posts as needed
   ];
