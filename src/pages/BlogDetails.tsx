@@ -49,42 +49,58 @@ const BlogDetails = () => {
 
       {/* Content */}
       <div className="space-y-6 text-xl leading-relaxed text-white">
-        <p className="text-2xl font-bold text-purple-300">• What We Offer:</p>
-        <p>Cloud Infrastructure Design: Build secure and scalable AWS cloud solutions.</p>
-        <p>CI/CD Pipelines: Automate code testing and deployment with tools like Jenkins, GitHub Actions, and AWS CodePipeline.</p>
-        <p>Containerization & Orchestration: Docker + Kubernetes (EKS) setup for efficient microservice deployment.</p>
-        <p>Monitoring & Logging: Set up CloudWatch, ELK, and Grafana for real-time monitoring and alerting.</p>
-        <p>Infrastructure as Code (IaC): Using Terraform and AWS CloudFormation for repeatable infrastructure deployment.</p>
+        <div className="space-y-6 text-xl leading-relaxed text-white">
+  {post.id === 2 && (
+    <>
+      <p className="text-2xl font-bold text-purple-300">• What We Offer:</p>
+      <p>Cloud Infrastructure Design: Build secure and scalable AWS cloud solutions.</p>
+      <p>CI/CD Pipelines: Automate code testing and deployment with tools like Jenkins, GitHub Actions, and AWS CodePipeline.</p>
+      <p>Containerization & Orchestration: Docker + Kubernetes (EKS) setup for efficient microservice deployment.</p>
+      <p>Monitoring & Logging: Set up CloudWatch, ELK, and Grafana for real-time monitoring and alerting.</p>
+      <p>Infrastructure as Code (IaC): Using Terraform and AWS CloudFormation for repeatable infrastructure deployment.</p>
 
-        <p className="text-2xl font-bold text-purple-300">• Business Benefits:</p>
-        <p>Faster Time-to-Market, Improved System Reliability, Reduced Downtime, Optimized Cloud Costs.</p>
-        <p>Purple Technologies is your trusted partner in automating, scaling, and transforming your cloud journey using AWS and DevOps best practices.</p>
+      <p className="text-2xl font-bold text-purple-300">• Business Benefits:</p>
+      <p>Faster Time-to-Market, Improved System Reliability, Reduced Downtime, Optimized Cloud Costs.</p>
+      <p>Purple Technologies is your trusted partner in automating, scaling, and transforming your cloud journey using AWS and DevOps best practices.</p>
 
-        <p className="text-2xl font-bold text-purple-300">• Azure & DevOps Solutions at Purple Technologies:</p>
-        <p>As organizations shift toward Microsoft-based ecosystems, Azure & DevOps has emerged as a go-to solution for cloud transformation. Purple Technologies offers end-to-end solutions to help you leverage the full power of Azure combined with modern DevOps workflows.</p>
+      <p className="text-2xl font-bold text-purple-300">• Azure & DevOps Solutions at Purple Technologies:</p>
+      <p>As organizations shift toward Microsoft-based ecosystems, Azure & DevOps has emerged as a go-to solution for cloud transformation...</p>
+      
+      {/* The rest of your AWS content */}
+    </>
+  )}
 
-        <p className="text-2xl font-bold text-purple-300">• Why Azure + DevOps?</p>
-        <p>Azure integrates seamlessly with GitHub, Visual Studio, and Microsoft’s DevOps tools, enabling a smooth developer experience and enterprise-grade deployment pipelines.</p>
+  {post.id === 3 && (
+    <>
+      <p className="text-2xl font-bold text-purple-300">• What We Offer:</p>
+      <p>Custom AI/ML Model Development: Build predictive, classification, and generative models tailored to your business needs.</p>
+      <p>Data Engineering & Preprocessing: Clean, transform, and pipeline data from multiple sources for accurate modeling.</p>
+      <p>Model Deployment: Serve models at scale using tools like Flask, FastAPI, TensorFlow Serving, or AWS SageMaker.</p>
+      <p>Computer Vision & NLP: OCR, facial recognition, sentiment analysis, and chatbots powered by the latest AI frameworks.</p>
+      <p>MLOps & Model Monitoring: Track drift, retrain models, and automate deployments using MLflow, DVC, and Kubeflow.</p>
 
-        <p className="text-2xl font-bold text-purple-300">• Our Services Include:</p>
-        <p>Azure Infrastructure Setup: Secure, compliant, and scalable architecture in Azure.</p>
-        <p>Azure DevOps Services: Repos, Boards, Pipelines, Test Plans, and Artifacts.</p>
-        <p>CI/CD Implementation: End-to-end automation with Azure Pipelines.</p>
-        <p>Security & Governance: Identity and Access Management (IAM), RBAC, and policy-based controls.</p>
-        <p>Hybrid Cloud Solutions: Azure Arc and on-premises integrations.</p>
+      <p className="text-2xl font-bold text-purple-300">• Business Benefits:</p>
+      <p>Smarter Decision Making, Predictive Insights, Process Automation, and Competitive Edge through AI.</p>
+      <p>Purple Technologies empowers businesses with end-to-end AI/ML solutions that deliver measurable impact and real-world results.</p>
 
-        <p className="text-2xl font-bold text-purple-300">• Business Benefits:</p>
-        <p>Accelerated Software Delivery, Seamless Integration with Microsoft Tools, Unified DevOps Lifecycle Management, Enterprise Security Standards.</p>
+      <p className="text-2xl font-bold text-purple-300">• Use Cases:</p>
+      <p>• Customer Churn Prediction</p>
+      <p>• Demand Forecasting</p>
+      <p>• Fraud Detection</p>
+      <p>• Sentiment Analysis</p>
+      <p>• Recommendation Engines</p>
 
-        <p className="text-2xl font-bold text-purple-300">• Why Purple Technologies?</p>
-        <p>Whether you’re a startup or an enterprise, Purple Technologies offers tailored cloud + DevOps solutions to match your needs.</p>
-        <p>With expert teams across AWS, Azure, DevOps, and security, we bring you:</p>
-        <ul className="list-disc list-inside pl-5 space-y-1">
-          <li>24/7 Support</li>
-          <li>Certified Engineers</li>
-          <li>Real-world Implementation Experience</li>
-          <li>Proven ROI-driven Results</li>
-        </ul>
+      <p className="text-2xl font-bold text-purple-300">• Why Purple Technologies?</p>
+      <ul className="list-disc list-inside pl-5 space-y-1">
+        <li>Experienced AI/ML Engineers</li>
+        <li>End-to-End Project Ownership</li>
+        <li>Fast Prototyping to Scalable Deployment</li>
+        <li>Domain-Specific Customization</li>
+      </ul>
+    </>
+  )}
+</div>
+
       </div>
 
       {/* Tags */}

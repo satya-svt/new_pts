@@ -70,7 +70,7 @@ const About = () => {
       gradient: 'from-teal-400 to-blue-500'
   },
   {
-   name: 'P SUDHKAR',
+   name: 'MUNNA',
       role: 'IOT Developer',
       description: 'Internet of Things solutions and device connectivity',
       gradient: 'from-purple-400 to-pink-500'
@@ -79,6 +79,34 @@ const About = () => {
   {
      name: 'A REVANTH',
       role: 'AWS Developer & Manager',
+      description: 'Cloud infrastructure and DevOps automation expert',
+      gradient: 'from-yellow-400 to-orange-500'
+
+  },
+   {
+     name: 'SK FAZUL REHMAN',
+      role: 'Embedded & IOT Developer',
+      description: 'Cloud infrastructure and DevOps automation expert',
+      gradient: 'from-yellow-400 to-orange-500'
+
+  },
+   {
+     name: 'SOWJANYA',
+      role: 'IOT Developer',
+      description: 'Cloud infrastructure and DevOps automation expert',
+      gradient: 'from-yellow-400 to-orange-500'
+
+  },
+   {
+     name: 'P SUDHKAR',
+      role: 'Business Development Manager',
+      description: 'Cloud infrastructure and DevOps automation expert',
+      gradient: 'from-yellow-400 to-orange-500'
+
+  },
+   {
+     name: 'BHAVANA',
+      role: 'IOT Developer',
       description: 'Cloud infrastructure and DevOps automation expert',
       gradient: 'from-yellow-400 to-orange-500'
 
