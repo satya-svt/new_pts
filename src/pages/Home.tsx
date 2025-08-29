@@ -10,6 +10,7 @@ import {
   Home as HomeIcon,
   Building2,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const highlights = [
@@ -64,6 +65,16 @@ const Home = () => {
       title: 'Smart Home',
       description: 'Intelligent automation for residential spaces',
     },
+  ];
+
+  const focusLinks = [
+    { id: 1, label: 'The Future of IoT in Smart Cities' },
+    { id: 2, label: 'AWS & DevOps' },
+    { id: 3, label: 'AI/ML' },
+    { id: 4, label: 'ROBOTICS' },
+    { id: 5, label: 'EMBEDDED SYSTEMS' },
+    { id: 6, label: 'FULLSTACK' },
+    { id: 7, label: 'JAVA' },
   ];
 
   return (
@@ -163,18 +174,21 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {solutions.map((solution, index) => {
               const Icon = solution.icon;
+              const blogId = index + 1;
               return (
                 <AnimatedSection key={index} className="group cursor-pointer">
-                  <div className="relative p-8 bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-2xl border border-gray-700 hover:border-purple-400/50 transition-all duration-500 hover:scale-105 min-h-[340px] flex flex-col justify-center text-center">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-cyan-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="relative z-10 flex flex-col items-center">
-                      <div className="w-20 h-20 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 rounded-3xl flex items-center justify-center mb-6 border border-purple-400/30 group-hover:border-purple-400/60 transition-colors duration-300">
-                        <Icon size={40} className="text-purple-400" />
+                  <Link to={`/blog/${blogId}`}>
+                    <div className="relative p-8 bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-2xl border border-gray-700 hover:border-purple-400/50 transition-all duration-500 hover:scale-105 min-h-[340px] flex flex-col justify-center text-center">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-cyan-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="relative z-10 flex flex-col items-center">
+                        <div className="w-20 h-20 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 rounded-3xl flex items-center justify-center mb-6 border border-purple-400/30 group-hover:border-purple-400/60 transition-colors duration-300">
+                          <Icon size={40} className="text-purple-400" />
+                        </div>
+                        <h3 className="text-2xl font-bold mb-4 text-white">{solution.title}</h3>
+                        <p className="text-gray-300 leading-relaxed">{solution.description}</p>
                       </div>
-                      <h3 className="text-2xl font-bold mb-4 text-white">{solution.title}</h3>
-                      <p className="text-gray-300 leading-relaxed">{solution.description}</p>
                     </div>
-                  </div>
+                  </Link>
                 </AnimatedSection>
               );
             })}
@@ -182,15 +196,22 @@ const Home = () => {
         </div>
       </AnimatedSection>
 
-      {/* CTA */}
-      <AnimatedSection className="py-20 bg-gradient-to-r from-purple-900/20 via-gray-900 to-cyan-900/20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Want to learn more?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Explore our full range of services and discover how we can help bring your IoT vision to life.
-          </p>
+      {/* Explore Our Focus Areas */}
+      <AnimatedSection className="py-20 bg-purple-700 text-white text-center">
+        <h2 className="text-4xl font-bold mb-4">Explore Our Focus Areas</h2>
+        <p className="text-lg mb-8 max-w-xl mx-auto">
+          Dive into cutting-edge domains driving the future of technology and innovation.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          {focusLinks.map((item) => (
+            <Link
+              key={item.id}
+              to={`/blog/${item.id}`}
+              className="px-5 py-2 rounded-full text-sm bg-purple-900 hover:bg-purple-800 border border-purple-400 transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
       </AnimatedSection>
     </div>
