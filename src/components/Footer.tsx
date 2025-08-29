@@ -17,11 +17,11 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-4">
               <img 
                 src="/image.png" 
-                alt="Purple Techno Solutions Logo" 
+                alt="Purple Technologies Logo" 
                 className="h-8 w-8 rounded-full object-cover"
               />
               <span className="text-xl font-bold text-white">
-                Purple Techno Solutions
+                Purple Technologies
               </span>
             </div>
             <p className="text-gray-300 mb-4">
@@ -62,7 +62,7 @@ const Footer = () => {
                 { name: 'Home', path: '/' },
                 { name: 'Products', path: '/products' },
                 { name: 'Solutions', path: '/solutions' },
-                { name: 'Apps', path: '/apps' }
+                { name: 'Contact us', path: '/contact' }
               ].map((item) => (
                 <li key={item.name}>
                   <Link 
@@ -106,7 +106,7 @@ const Footer = () => {
           className="border-t border-gray-700 mt-8 pt-8 text-center"
         >
           <p className="text-gray-400">
-            © 2025 Purple Techno Solutions. All rights reserved.
+            © 2025 Purple Technologies. All rights reserved.
           </p>
         </motion.div>
       </div>

@@ -1,49 +1,79 @@
-export interface BlogPost {
-    id: number;
-    title: string;
-    excerpt: string;
-    author: string;
-    date: string;
-    category: string;
-    image: string;
-    readTime: string;
-    tags: string[];
-  }
-  
-  export const blogPosts: BlogPost[] = [
-    {
-      id: 1,
-      title: 'The Future of IoT in Smart Cities',
-      excerpt: 'Exploring how IoT technology is revolutionizing urban infrastructure...',
-      author: 'Priya Sharma',
-      date: '2024-01-15',
-      category: 'IoT Trends',
-      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg',
-      readTime: '5 min read',
-      tags: ['Smart Cities', 'Urban Planning', 'IoT']
-    },
-    {
-        id: 2,
-        title: 'AWS & DevOps',
-        excerpt: 'What We Offer: Cloud Infrastructure Design: Build secure and scalable AWS cloud solutions. CI/CD Pipelines: Automate code testing and deployment with tools like Jenkins, GitHub Actions, and AWS CodePipeline. Containerization & Orchestration: Docker + Kubernetes (EKS) setup for efficient microservice deployment. Monitoring & Logging: Set up CloudWatch, ELK, and Grafana for real-time monitoring and alerting. Infrastructure as Code (IaC): Using Terraform and AWS CloudFormation for repeatable infrastructure deployment. ✅ Business Benefits: Faster Time-to-Market, Improved System Reliability, Reduced Downtime, Optimized Cloud Costs. Purple Technologies is your trusted partner in automating, scaling, and transforming your cloud journey using AWS and DevOps best practices. Azure & DevOps Solutions at Purple Technologies: As organizations shift toward Microsoft-based ecosystems, Azure & DevOps has emerged as a go-to solution for cloud transformation. Purple Technologies offers end-to-end solutions to help you leverage the full power of Azure combined with modern DevOps workflows. Why Azure + DevOps? Azure integrates seamlessly with GitHub, Visual Studio, and Microsoft’s DevOps tools, enabling a smooth developer experience and enterprise-grade deployment pipelines. Our Services Include: Azure Infrastructure Setup: Secure, compliant, and scalable architecture in Azure. Azure DevOps Services: Repos, Boards, Pipelines, Test Plans, and Artifacts. CI/CD Implementation: End-to-end automation with Azure Pipelines. Security & Governance: Identity and Access Management (IAM), RBAC, and policy-based controls. Hybrid Cloud Solutions: Azure Arc and on-premises integrations. ✅ Business Benefits: Accelerated Software Delivery, Seamless Integration with Microsoft Tools, Unified DevOps Lifecycle Management, Enterprise Security Standards. With Purple Technologies, tap into the future of enterprise DevOps using the capabilities of Microsoft Azure. Why Purple Technologies? Whether you’re a startup or an enterprise, Purple Technologies offers tailored cloud + DevOps solutions to match your needs. With expert teams across AWS, Azure, DevOps, and security, we bring you: 24/7 Support, Certified Engineers, Real-world Implementation Experience, Proven ROI-driven Results.',
-        image: 'https://kalyanithub.com/wp-content/uploads/2023/12/Devops-min.jpg',
-        readTime: "",
-        date: "",
-        author: "",
-        category: "",
-        tags: ['AWS', 'DevOps', 'CI/CD', 'Terraform', 'CloudWatch', 'Kubernetes'], 
-      },
-     {
-  id: 3,
-  title: 'AI/ML ',
-  excerpt: 'Explore how Purple Technologies leverages AI/ML to enable automation, prediction, and intelligent business transformation.',
-  author: '',
-  date: '',
-  category: '',
-  image: 'https://i.pinimg.com/736x/f7/8c/ef/f78cef0dd20b57db43cc6c93cc4e7303.jpg', // Replace with AI-related image if needed
-  readTime: '',
-  tags: ['AI', 'MachineLearning', 'MLOps', 'Python', 'NLP'],
-}
-
-    // Add more posts as needed
-  ];
+export const blogPosts = [
+  {
+    id: 1,
+    title: 'The Future of IoT in Smart Cities',
+    excerpt: 'Exploring how IoT technology is revolutionizing urban infrastructure and improving quality of life.',
+    author: 'Admin',
+    date: 'July 2025',
+    category: 'IoT Trends',
+    readTime: '5 min read',
+    tags: ['IoT', 'Smart Cities', 'Urban Tech'],
+    image: 'https://i.pinimg.com/1200x/2a/bc/0d/2abc0d645db6a9485741cc03a81338c3.jpg',
+  },
+  {
+    id: 2,
+    title: 'AWS & DevOps at Purple Technologies',
+    excerpt: 'Delivering scalable cloud infrastructure with CI/CD, Docker, and infrastructure as code.',
+    author: 'DevOps Team',
+    date: 'July 2025',
+    category: 'Cloud & DevOps',
+    readTime: '6 min read',
+    tags: ['AWS', 'DevOps', 'Cloud'],
+    image: 'https://kalyanithub.com/wp-content/uploads/2023/12/Devops-min.jpg',
+  },
+  {
+    id: 3,
+    title: 'AI/ML Solutions by Purple Technologies',
+    excerpt: 'Building predictive, generative, and NLP models with powerful deployment pipelines.',
+    author: 'AI Team',
+    date: 'July 2025',
+    category: 'AI & ML',
+    readTime: '7 min read',
+    tags: ['AI', 'ML', 'Automation'],
+    image: 'https://i.pinimg.com/736x/de/44/66/de4466bbd8fc8fcf0c1ca3fdfa0cf59d.jpg',
+  },
+  {
+    id: 4,
+    title: 'Robotics Automation in Industry 4.0',
+    excerpt: 'Integrating intelligent robotic systems for next-gen manufacturing and logistics.',
+    author: 'Robotics Team',
+    date: 'July 2025',
+    category: 'Robotics',
+    readTime: '5 min read',
+    tags: ['Robotics', 'Automation', 'Industry 4.0'],
+    image: 'https://i.pinimg.com/736x/29/24/96/292496c37f5a71bc8f7e6c4ced37f172.jpg',
+  },
+  {
+    id: 5,
+    title: 'Embedded Systems that Power the Future',
+    excerpt: 'Designing efficient, real-time embedded systems for smart devices and machines.',
+    author: 'Embedded Team',
+    date: 'July 2025',
+    category: 'Embedded Systems',
+    readTime: '6 min read',
+    tags: ['Embedded', 'Hardware', 'IoT'],
+    image: 'https://i.pinimg.com/1200x/13/20/f0/1320f000d0ea76a69c2bf82262af9d78.jpg',
+  },
+  {
+    id: 6,
+    title: 'Modern Fullstack Web App Development',
+    excerpt: 'How Purple Technologies delivers scalable, secure fullstack solutions using React, Node.js, and MongoDB.',
+    author: 'Web Team',
+    date: 'July 2025',
+    category: 'Fullstack Development',
+    readTime: '5 min read',
+    tags: ['Fullstack', 'MERN', 'Web Apps'],
+    image: 'https://i.pinimg.com/736x/fa/e8/62/fae862fff4f6100d000a1c01c4030db0.jpg',
+  },
+  {
+    id: 7,
+    title: 'Java-Based Enterprise Applications',
+    excerpt: 'Robust Java backend development with Spring Boot for enterprise-grade systems.',
+    author: 'Java Team',
+    date: 'July 2025',
+    category: 'Java Development',
+    readTime: '5 min read',
+    tags: ['Java', 'Spring Boot', 'Enterprise'],
+    image: 'https://www.mytaskpanel.com/wp-content/uploads/2023/04/consulting-blog-09.webp',
+  },
+];
